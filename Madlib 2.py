@@ -1,1 +1,2 @@
-# getting inputs
+# getting variables via inputs
+
