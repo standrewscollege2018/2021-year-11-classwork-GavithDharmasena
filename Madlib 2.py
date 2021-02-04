@@ -1,8 +1,7 @@
 #this is a code that writes a madlib story using inputs from the user
 
-#importing time for sleeps and random for generating random things
+#importing time for sleeps
 import time
-import random
 
 #getting details
 name = input("Enter a name")
