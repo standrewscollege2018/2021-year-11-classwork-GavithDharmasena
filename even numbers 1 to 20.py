@@ -1,4 +1,6 @@
-#for loop for even numbers 0 to 20
-for num in range(0,21):
-    if num % 2==0:
-        print(num)
+#for loop
+start_num = int(input("Please enter a starting number: "))
+stop_num = int(input("Please enter a stopping number: "))
+step = int(input("Please enter a step for the loop: "))
+for num in range(start_num,stop_num,step):
+    print(num)
