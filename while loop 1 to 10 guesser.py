@@ -24,12 +24,13 @@ while play_again == True:
                 print ("It only took you 1 guess")
             else:
                 print ("It only took you",count,"guesses.")
-                highscore = 101 - count
-                if new_highscore >= highscore:
-                    new_highscore = highscore
-                    print ("Your highscore is",str(new_highscore),"/ 100")
-                else:
-                    print ("Your highscore is",str(highscore),"/ 100")
+            highscore = (101 - count)
+            print (highscore)
+            if new_highscore > highscore:
+                new_highscore = highscore
+                print ("Your highscore is",str(new_highscore),"/ 100")
+            else:
+                print ("Your highscore is",str(highscore),"/ 100")
             #playing the game again
             play_again = input("Would you like to play again (yes or no)?: ")
             if play_again == "no":
@@ -41,5 +42,4 @@ while play_again == True:
                 print("higher")
             else:
                 print("lower")
-
 
