@@ -1,3 +1,3 @@
 #for loop
-for num in range(18,23):
+for num in range(0,1000000):
     print(num)
