@@ -49,25 +49,25 @@ def shoot(pos,e1_pos):
         if(e1_pos[0] - 1 == pos[0]):
             return True
         else:
-            return False
+            return False      
     elif(t_dir == "Down"):
         if(e1_pos[0] + 1 == pos[0]):
-            return True
+            return True 
         else:
-            return False
+            return False      
     elif(t_dir == "Left"):
         if(e1_pos[1] +  1 == pos[1]):
-            return True
+            return True   
         else:
-            return False
+            return False      
     elif(t_dir == "Right"):
         if(e1_pos[1] - 1 == pos[1]):
-            return True
+            return True  
         else:
-            return False
-
+            return False      
+        
     else:
-        return False
+        return False       
 #Update Map
 def update_map():
     global pos, r1,r2,r3,r4,r5,update_y
@@ -75,7 +75,7 @@ def update_map():
     r2 = ["#","#","#","#","#"]
     r3 = ["#","#","#","#","#"]
     r4 = ["#","#","#","#","#"]
-    r5 = ["#","#","#","#","#"]
+    r5 = ["#","#","#","#","#"]    
     update_y = pos[1] - 1
     if(pos[0] == 1): r1[update_y] = "S"
     if(pos[0] == 2): r2[update_y] = "S"
@@ -92,55 +92,70 @@ e1_pos = [random.randint(1,5),random.randint(1,5)]
 #pos = [3,3]
 #e1_pos = [3,4]
 
-
+act = 0
+act2 = False
 
 
 #Run Code
 def menu(e1_pos,pos):
-    global command
+    global command, act, act2
     if(pos[0] == e1_pos[0]) and (pos[1] == e1_pos[1]):
         print("YOU DIED")
+        if(act2 == True): act = 1
+        print("You died in " + str(act) + " turns!")
         while(True):
-            wsdf = 1 + 1
+            wsdf = 1 + 1           
     var = input()
+    if(var == "Ups"): act2 = True
     if(var == "Left"):
         pos[1] += -1
         command += 1
+        act += 1
     if(var == "Right"):
         pos[1] += 1
         command += 1
+        act += 1
     if(var == "Up"):
         pos[0] += -1
+        act += 1
         command += 1
     if(var == "Down"):
         pos[0] += 1
         command += 1
+        act += 1
     if(var == "Ping"):
         command += 1
+        act += 1
         direction = input("Direction: ")
-
         if(direction == "Left") or (direction == "Right") or (direction == "Up") or (direction == "Down"): ping(direction,spd_sound,e1_pos,pos)
         else: pass
     if(var == "Map"):
         update_map()
         command += 1
+        act += 1
     if(var == "Shoot"):
         command += 1
+        act += 1
         if(shoot(pos,e1_pos) == True):
             e1_pos = [0,0]
             print("SUNK")
+            if(act2 == True): act = 1
+            print("You did it in " + str(act) + " turns!")
+            while(True):
+                wsdf = 1 + 1            
         else: print("MISS")
-       # if(e1_pos[1] + 1 == pos[1]): print("Dsfd")
+          
+            
 
 
 
 #Int Check
 def int_check(var):
-    try:
+    try: 
         int(var)
         return True
     except ValueError:
-        return False
+        return False 
 
 while(True):
     menu(e1_pos,pos)
@@ -153,12 +168,12 @@ while(True):
         ran2 = random.randint(0,1)
         if(ran == 1):
             if(ran2 == 0): e1_pos[1] += 1
-            if(ran2 == 1): e1_pos[1] += -1
+            if(ran2 == 1): e1_pos[1] += -1            
             if(e1_pos[1] >= 5): e1_pos[1] = 4
             if(e1_pos[1] <= 0): e1_pos[1] = 2
         elif(ran == 0):
             if(ran2 == 0): e1_pos[0] += 1
             if(ran2 == 1): e1_pos[0] += -1
             if(e1_pos[0] >= 5): e1_pos[0] = 4
-            if(e1_pos[0] <= 0): e1_pos[0] = 2
+            if(e1_pos[0] <= 0): e1_pos[0] = 2 
         command = 0
