@@ -1,3 +1,4 @@
+#code that finds the sum of all even fibonnaci sequence numbers below 4000000
 fib = 1
 fib2 = 2
 count = 0
@@ -12,7 +13,6 @@ while count <=4000000:
     fib2 = count
 
 print (total)
-
 
 
 
