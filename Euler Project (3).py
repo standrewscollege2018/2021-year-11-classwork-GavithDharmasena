@@ -9,4 +9,4 @@ for num in range (2,775146):
         print(num)
 
 
-print (n / prime_numbers[0], "is the largest prime number that is a factor of 600851475143.")
+print (prime_numbers,"are all the factors of 600851475143")
