@@ -11,8 +11,5 @@ while count <=4000000:
     count = fib + fib2
     fib = fib2
     fib2 = count
-
+    print ("yeet")
 print (total)
-
-
-
